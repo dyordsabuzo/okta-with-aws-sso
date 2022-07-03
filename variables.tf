@@ -21,3 +21,15 @@ variable "okta_token" {
   description = "Okta token"
   default     = "UNSET"
 }
+
+variable "okta_group_list" {
+  type = list(object({
+    name        = string
+    description = string
+  }))
+  description = "List of okta group definition"
+  default = [{
+    description = "Administrator"
+    name        = "PS-Administrator"
+  }]
+}
